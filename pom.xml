@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bdv.microservicios</groupId>
 	<artifactId>Dummy-chquesliberados</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>V1.0</version>
 	<name>Dummy-chquesliberados</name>
 	<description>Microservicio dummy para cheques liberados</description>
 	<properties>
