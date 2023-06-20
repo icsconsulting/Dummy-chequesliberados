@@ -22,8 +22,8 @@ public class Chequedto {
     String trancode;
     String monto;
 
-    String front;
-    String rear;
+    //String front;
+   // String rear;
     String corregido;
     String transmitido;
     String cuentadepo;
@@ -37,7 +37,7 @@ public class Chequedto {
     String auxiliar5;
     String transmitidooracle;
 
-    public Chequedto(String serial, String banco, String oficina, String dv, String cuenta, String fechacontable, String codBanco, String agencia, String cajero, String din, String trancode, String monto, String front, String rear, String corregido, String transmitido, String cuentadepo, String serialp, String dna, String estatus, String auxiliar1, String auxiliar2, String auxiliar3, String auxiliar4, String auxiliar5, String transmitidooracle) {
+    public Chequedto(String serial, String banco, String oficina, String dv, String cuenta, String fechacontable, String codBanco, String agencia, String cajero, String din, String trancode, String monto, /*String front, String rear,*/ String corregido, String transmitido, String cuentadepo, String serialp, String dna, String estatus, String auxiliar1, String auxiliar2, String auxiliar3, String auxiliar4, String auxiliar5, String transmitidooracle) {
         this.serial = serial;
         this.banco = banco;
         this.oficina = oficina;
@@ -50,8 +50,8 @@ public class Chequedto {
         this.din = din;
         this.trancode = trancode;
         this.monto = monto;
-        this.front = front;
-        this.rear = rear;
+       // this.front = front;
+       // this.rear = rear;
         this.corregido = corregido;
         this.transmitido = transmitido;
         this.cuentadepo = cuentadepo;

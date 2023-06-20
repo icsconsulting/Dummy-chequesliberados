@@ -1,5 +1,6 @@
 package com.bdv.microservicios.Dummychquesliberados.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,9 +25,10 @@ public class Cheque implements Serializable {
     String din;
     String trancode;
     String monto;
-
-    String front;
-    String rear;
+    //@JsonIgnore
+    //String front;
+    //@JsonIgnore
+   // String rear;
     String corregido;
     String transmitido;
     String cuentadepo;
@@ -40,7 +42,7 @@ public class Cheque implements Serializable {
     String auxiliar5;
     String transmitidooracle;
 
-    public Cheque(ChequeId chequeId, String fechacontable, String codBanco, String agencia, String cajero, String din, String trancode, String monto, String front, String rear, String corregido, String transmitido, String cuentadepo, String serialp, String dna, String estatus, String auxiliar1, String auxiliar2, String auxiliar3, String auxiliar4, String auxiliar5, String transmitidooracle) {
+    public Cheque(ChequeId chequeId, String fechacontable, String codBanco, String agencia, String cajero, String din, String trancode, String monto, /*String front, String rear,*/ String corregido, String transmitido, String cuentadepo, String serialp, String dna, String estatus, String auxiliar1, String auxiliar2, String auxiliar3, String auxiliar4, String auxiliar5, String transmitidooracle) {
         this.chequeId = chequeId;
         this.fechacontable = fechacontable;
         this.codBanco = codBanco;
@@ -49,8 +51,8 @@ public class Cheque implements Serializable {
         this.din = din;
         this.trancode = trancode;
         this.monto = monto;
-        this.front = front;
-        this.rear = rear;
+      //  this.front = front;
+      //  this.rear = rear;
         this.corregido = corregido;
         this.transmitido = transmitido;
         this.cuentadepo = cuentadepo;

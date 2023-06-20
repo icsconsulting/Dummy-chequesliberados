@@ -51,8 +51,15 @@ public class ChequeController {
     public ResponseEntity<Chequedto> actualizarestatuscheque(@RequestBody ChequeId chequeId,@PathVariable String nuevoestatus){
         Optional<Cheque> chequeactualizado;
         if(chequeId!=null){
-            Optional<Cheque> optionalCheque=chequeService.consultarChequePorId(chequeId);
-            if (optionalCheque.isPresent()){
+            //estatus=X
+           //   ChequeId chequeGuardadoId=new ChequeId("42373791","0102","0040","46","0400249540");
+            //estatus=P
+           //  ChequeId chequeGuardadoId2=new ChequeId("08607487","0108","0030","72","0100040968");
+           // Optional<Cheque> optionalCheque=chequeService.consultarChequePorId(chequeId);
+            if ((chequeId.getSerial().equals("42373791")&&chequeId.getBanco().equals("0102")
+                    &&chequeId.getOficina().equals("0040")&&chequeId.getDv().equals("46")&&chequeId.getCuenta().equals("0400249540"))
+            ||(chequeId.getSerial().equals("08607487")&&chequeId.getBanco().equals("0108")
+                    &&chequeId.getOficina().equals("0030")&&chequeId.getDv().equals("72")&&chequeId.getCuenta().equals("0100040968"))){
                 chequeactualizado=chequeService.actualizarestatuscheque(chequeId,nuevoestatus);
                 return new ResponseEntity<>(new ChequeToChequedtoMapper().apply(chequeactualizado.get()),HttpStatus.OK);
             }else{
