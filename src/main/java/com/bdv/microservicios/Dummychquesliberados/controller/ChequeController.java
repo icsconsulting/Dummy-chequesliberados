@@ -24,7 +24,7 @@ public class ChequeController {
         this.chequeService = chequeService;
     }
 
-    @GetMapping
+    @GetMapping("/consultar")
     public ResponseEntity<List<Chequedto>> consultarcheques(@RequestParam(required = false) String estatus,@RequestParam String agencia){
 
         ResponseEntity<List<Chequedto>> response;
@@ -47,7 +47,7 @@ public class ChequeController {
         return response;
     }
 
-    @PostMapping("/{nuevoestatus}")
+    @PostMapping("modificar/{nuevoestatus}")
     public ResponseEntity<Chequedto> actualizarestatuscheque(@RequestBody ChequeId chequeId,@PathVariable String nuevoestatus){
         Optional<Cheque> chequeactualizado;
         if(chequeId!=null){
@@ -58,7 +58,7 @@ public class ChequeController {
            // Optional<Cheque> optionalCheque=chequeService.consultarChequePorId(chequeId);
             if ((chequeId.getSerial().equals("42373791")&&chequeId.getBanco().equals("0102")
                     &&chequeId.getOficina().equals("0040")&&chequeId.getDv().equals("46")&&chequeId.getCuenta().equals("0400249540"))
-            ||(chequeId.getSerial().equals("08607487")&&chequeId.getBanco().equals("0108")
+            ||(chequeId.getSerial().equals("08607487")&&chequeId.getBanco().equals("0102")
                     &&chequeId.getOficina().equals("0030")&&chequeId.getDv().equals("72")&&chequeId.getCuenta().equals("0100040968"))){
                 chequeactualizado=chequeService.actualizarestatuscheque(chequeId,nuevoestatus);
                 return new ResponseEntity<>(new ChequeToChequedtoMapper().apply(chequeactualizado.get()),HttpStatus.OK);
